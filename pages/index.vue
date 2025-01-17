@@ -24,6 +24,8 @@ const message = ref("Hello, world!")
             <nuxt-link to="/skener"> Skener </nuxt-link>
             <br>
             <nuxt-link to="/generator"> Generator </nuxt-link>
+            <br>
+            <nuxt-link to="/table"> Tablica </nuxt-link>
 
           </v-col>
         </v-row>

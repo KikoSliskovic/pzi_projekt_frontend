@@ -1,46 +1,119 @@
 <script setup lang="ts">
-
+import Navbar from '../../components/Navbar.vue'
 </script>
 
 <template>
   <Navbar />
   <v-main>
-    <div class="flex min-h-screen">
-      <!-- Left Side: Form -->
-      <v-row>
-        <div class="col-6">
-          <h1 class="font-bold mb-5">Form Title</h1>
-          <form class="flex space-x-4">
-            <!-- Dropdown Menu Example -->
-            <div class="w-1/2">
-              <label class="block text-sm font-medium mb-1">Dropdown Menu</label>
-              <select class="w-full px-3 py-2 border rounded-md">
-                <option value="" disabled selected>Select an option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-              </select>
-            </div>
-
-            <!-- Input Field Example -->
-            <div>
-              <label class="block text-sm font-medium mb-1">Input Field</label>
-              <input type="text" class="w-full px-3 py-2 border rounded-md" placeholder="Enter text"/>
-            </div>
-          </form>
+    <div class="background min-h-screen flex flex-col items-center justify-center">
+      <div class="box bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-center">
+        <!-- Inner Box -->
+        <div class="inner-box bg-white-100 p-4 rounded-lg shadow-md mb-15">
+          <!-- Content for the inner box goes here -->
         </div>
-
-        <!-- Right Side: QR Code -->
-        <div class="col-6">
-          <div class="border p-4 text-center">
-            <!-- Placeholder for QR Code -->
-            <p class="text-gray-500">QR Code will appear here</p>
+        <!-- Rectangles and Labels -->
+        <div class="rectangles-container flex flex-col items-center">
+          <div class="rectangle-label-pair mb-4">
+            <div class="rectangle mb-2"></div>
+            <p class="label">Predmet</p>
+          </div>
+          
+          <div class="rectangle-label-pair mb-4">
+            <div class="rectangle mb-2"></div>
+            <p class="label">Profesor</p>
+          </div>
+          
+          <div class="rectangle-label-pair mb-4">
+            <div class="rectangle mb-2"></div>
+            <p class="label">Učionica</p>
+          </div>
+          
+          <div class="rectangle-label-pair mb-4">
+            <div class="rectangle mb-2"></div>
+            <p class="label">Datum</p>
           </div>
         </div>
-      </v-row>
+        <!-- New Rectangle for QR Code Generation -->
+        <div class="rectangle-label-pair mt-4">
+          <div class="rectangleQR mb-2">
+            <img src="@/assets/Logo2.png" alt="QR Code" class="qr-code-image" />
+          </div>
+          <p class="label">Generiraj QR Kod</p>
+        </div>
+      </div>
     </div>
   </v-main>
 </template>
 
 <style scoped>
+.background {
+  background-image: url('@/assets/backgroundpattern.png');
+  background-size: cover;
+  background-position: center;
+}
 
+.box {
+  max-width: 1000px;
+  width: 100%;
+  min-height: 600px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-box {
+  max-width: 300px;
+  width: 100%;
+  min-height: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for inner box */
+  margin-bottom: 20px; /* Space between inner box and rectangles */
+}
+
+.rectangles-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rectangle-label-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rectangle {
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangleQR {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-code-image {
+  max-width: 100%;
+  max-height: 50%;
+}
+
+.label {
+  color: gray;
+  text-align: center;
+}
 </style>
