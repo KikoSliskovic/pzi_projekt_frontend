@@ -15,7 +15,7 @@
         <v-col class="v-col-12 v-col-md-6"
             style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative">
           <v-img
-              src="assets/logo2.png"
+              src="assets/Logo2.png"
               max-height="250"
               alt="Logo2"
               style="display: block; margin: auto;"

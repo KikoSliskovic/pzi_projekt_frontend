@@ -49,83 +49,82 @@ const userData = ref([
 
 .ispod-naslova {
   margin-left: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: gray;
 }
 
 .profile-section {
   display: flex;
-  justify-content: center;
-  margin-top: 70px;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 90px; 
+  margin-bottom: 20px;
+  margin-left: 0;
 }
 
 .profile-picture {
-  margin-top: 100px;
-  margin-left:4em ;
   width: 150px;
   height: 200px;
-  background-color: lightgray;
-  border-radius: 15px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
   background-image: url('assets/60111.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .gradient-line {
-  margin-left: 4em;
-  height: 3px;
-  background: linear-gradient( rgba(23, 97, 255, 1), rgba(255, 255, 255, 0));
-  margin-top: 20px;
-  width: 100%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(#23a6d5, #23d5ab);
+  margin-bottom: 10px;
 }
 
 .view-card-button {
-  margin-left: 4em;
-  display: block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: rgb(23, 97, 255);
+  background-color: #23a6d5;
   color: white;
+  padding: 10px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
 }
 
 .user-data {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px; /* Increased gap */
-  margin-left: 2em;
-  margin-top: 70px;
+  width: 100%;
 }
 
 .data-item {
-  width: 200px;
+  margin-bottom: 15px;
 }
 
 .data-title {
-  font-size: 1em;
-  color: rgb(23, 97, 255);
+  font-size: 1.2em;
   margin-bottom: 5px;
 }
 
 .data-rectangle {
-  width: 120%;
-  height: 50px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px;
   border-radius: 5px;
 }
-</style>  
+
+@media (min-width: 767px) {
+  .profile-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .profile-info {
+    margin-left: 0; /* Reset the left margin */
+    justify-content: center; /* Center the content */
+  }
+
+  .user-data {
+    width: 60%;
+  }
+}
+</style>
