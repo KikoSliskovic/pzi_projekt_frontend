@@ -21,16 +21,28 @@ const handleSubmit = async () => {
   const password = form.password;
 
   try {
-    const response = await fetch('http://pzi-backend.test/api/login', {
+    // Fetch CSRF token first
+    const csrfResponse = await fetch('http://localhost:8000/sanctum/csrf-cookie', {
+      method: 'GET',
+      credentials: 'include',
+    });
+
+    if (!csrfResponse.ok) {
+      throw new Error('Failed to fetch CSRF token');
+    }
+
+    // Proceed with login request
+    const response = await fetch('http://localhost:8000/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email, password }),
+      credentials: 'include',
     });
 
     if (!response.ok) {
-      throw new Error('Network response was not okeeeee');
+      throw new Error('Network response was not ok');
     }
 
     const data = await response.json();
@@ -55,21 +67,16 @@ const handleSubmit = async () => {
         <v-card class="pa-13">
           <v-card-title class="text-h5 pb-8">Prijava u sustav</v-card-title>
           <v-card-text>
-            <v-form @submit.prevent="handleSubmit">
               <v-text-field v-model="loginForm.email" label="E-pošta" type="email" required></v-text-field>
               <v-text-field v-model="loginForm.password" label="Lozinka" type="password" required></v-text-field>
-              <v-btn type="submit" color="primary">Prijava</v-btn>
-            </v-form>
           </v-card-text>
         </v-card>
-        <nuxt-link to="/profil">
-          <v-img
+          <v-img href="#" @click="handleSubmit"
               src="assets/dugme_prijava.svg"
               max-height="70"
               alt="Logo2"
               style="display: block; margin: auto; margin-top: 20px"
           ></v-img>
-        </nuxt-link>
       </v-col>
     </v-row>
   </v-container>

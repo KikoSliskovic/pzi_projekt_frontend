@@ -51,37 +51,14 @@ const userData = ref([
   margin-left: 40px;
 }
 
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-}
 
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-left: 0;
-}
 
-.profile-picture {
-  width: 150px;
-  height: 200px;
-  background-color: #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  background-image: url('assets/60111.jpg');
-  background-size: cover;
-  background-position: center;
-}
 
 .gradient-line {
-  width: 80%;
+  width: 50%;
   height: 2px;
   background: linear-gradient(#23a6d5, #23d5ab);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .view-card-button {
@@ -112,19 +89,68 @@ const userData = ref([
   border-radius: 5px;
 }
 
-@media (min-width: 767px) {
+/* za mobitel */
+@media (max-width: 600px) {
   .profile-section {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
 
-  .profile-info {
-    margin-left: 0; /* Reset the left margin */
-    justify-content: center; /* Center the content */
-  }
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
 
+.profile-picture {
+  width: 150px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-image: url('assets/60111.jpg');
+  background-size: cover;
+  background-position: center;
+}
+}
+
+/* za vece od mobitela */
+@media (min-width: 768px) {
   .user-data {
-    width: 60%;
+    width: 70%;
   }
+
+  .profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.profile-info {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 20; /* Reset the left margin */
+  justify-content: center; /* Center the content */
+  align-content: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-image: url('assets/60111.jpg');
+  background-size: cover;
+  background-position: center;
+}
 }
 </style>
