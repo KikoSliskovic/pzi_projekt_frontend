@@ -2,8 +2,6 @@
 import { ref, computed, onMounted } from 'vue'
 import Navbar from '../../components/Navbar.vue'
 import axios from "axios";
-//const subjects = ref([]);
-//const classrooms = ref([]);
 
 const lectures = ref([]);
 
@@ -20,17 +18,6 @@ const fetchData = async () => {
 };
 
 onMounted(fetchData);
-
-
-const selectedSubject = ref('All')
-
-const filteredPeople = computed(() => {
-  if (selectedSubject.value === 'All') {
-    return people
-  }
-  return people.filter(person => person.predmet === selectedSubject.value)
-})
-
 </script>
 
 <template>
@@ -50,7 +37,7 @@ const filteredPeople = computed(() => {
                 <tr>
                   <th>Index/Student</th>
                   <th>Profesor</th>
-                  <th>Naziv</th>
+                  <th>Kolegij</th>
                   <th>Učionica</th>
                   <th>Datum</th>
                   <th>Prisutnost</th>
@@ -58,13 +45,13 @@ const filteredPeople = computed(() => {
               </thead>
               <tbody>
                 <tr v-for="lecture in lectures" :key="lecture.id">
-                  <td>{{ lecture.korisnik.name ?? 'nema' }}</td>
-                  <td>{{ lecture.professor_id ?? 'nema' }}</td>
-                  <td>{{ lecture.subject.subject_name ?? 'nema' }}</td>
-                  <td>{{ lecture.classroom.name?? 'nema' }}</td>
-                  <td>{{ lecture.date ?? 'nema' }}</td>
-                  <td :class="{'text-green-500': lecture.attendance === 1, 'text-red-500': lecture.attendance === 0}">
-                    {{ lecture.attendance === 0 ? 'Odsutan' : (lecture.attendance === 1 ? 'Prisutan' : 'Nema podataka') }}
+                  <td>{{ lecture.subject?.name ?? 'N/A' }}</td>
+                  <td>{{ lecture.professor?.name ?? 'Nema profesora' }}</td>
+                  <td>{{ lecture.subject?.subject_name ?? 'Nema kolegija' }}</td>
+                  <td>{{ lecture.classroom?.name ?? 'Nema učionice' }}</td>
+                  <td>{{ lecture.date ?? 'Nema datuma' }}</td>
+                  <td :class="lecture.attendance ? 'text-green' : 'text-red'">
+                    {{ lecture.attendance ? 'Prisutan' : 'Odsutan' }}
                   </td>
                 </tr>
               </tbody>
