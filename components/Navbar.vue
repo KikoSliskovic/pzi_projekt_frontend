@@ -4,7 +4,6 @@
       <img class="slika" src="@/assets/Logo2.png" alt="Logo" >
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn class="d-none d-md-flex" color="black" @click="navigateTo({ name: 'index' })">Početna</v-btn>
     <v-btn class="d-none d-md-flex" color="black" @click="navigateTo({ name: 'profil' })">Profil</v-btn>
     <v-btn class="d-none d-md-flex" color="black" @click="navigateTo({ name: 'skener' })">Skener</v-btn>
     <v-btn class="d-none d-md-flex" color="black" @click="navigateTo({ name: 'table' })">Tablica</v-btn>
@@ -17,7 +16,6 @@
 
   <v-navigation-drawer v-model="drawer" app temporary>
     <v-list>
-      <v-list-item @click="navigateTo({ name: 'index' })">Početna</v-list-item>
       <v-list-item @click="navigateTo({ name: 'profil' })">Profil</v-list-item>
       <v-list-item @click="navigateTo({ name: 'skener' })">Skener</v-list-item>
       <v-list-item @click="navigateTo({ name: 'table' })">Tablica</v-list-item>
