@@ -7,7 +7,7 @@
   <Navbar />
   <v-main>
     <h1>SKENER</h1>
-    <nuxt-link to="/"> Nazad </nuxt-link>
+    <nuxt-link to="/profil"> Nazad </nuxt-link>
   </v-main>
 </template>
 

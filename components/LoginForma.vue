@@ -47,7 +47,7 @@ const handleSubmit = async () => {
 
     const data = await response.json();
     if (data.message === 'Login successful') {
-      router.push('/');
+      router.push('/profil');
     } else {
       errorMessage.value = 'Invalid credentials';
     }
@@ -76,6 +76,7 @@ const handleSubmit = async () => {
               max-height="70"
               alt="Logo2"
               style="display: block; margin: auto; margin-top: 20px"
+              cursor="pointer"
           ></v-img>
       </v-col>
     </v-row>

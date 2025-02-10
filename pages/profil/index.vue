@@ -3,14 +3,12 @@ import { ref } from 'vue';
 
 const userData = ref([
   { title: 'Korisnička oznaka', text: 'Ante Šimić' },
-  { title: 'Datum rođenja', text: '25.2.2003' },
+  { title: 'Datum rođenja', text: '25. svibanj 2003.' },
   { title: 'E-mail', text: 'ante.simic@fpmoz.sum.ba' },
-  { title: 'Uloga', text: 'Ostalo' },
+  { title: 'Uloga', text: 'Student' },
   { title: 'Organizacija', text: 'FPMOZ' },
-  { title: 'Povezanost s ustanovom', text: 'Student' },
-  { title: 'Edu-ID', text: 'ante.simic@fpmoz.sum.ba' },
-  { title: 'Akademsko zvanje', text: '' },
-  { title: 'Akademski stupanj', text: '' },
+  { title: 'Edu-ID', text: 'ante.simic6@sum.ba' },
+  { title: 'Akademsko zvanje', text: 'Student' },
 ]);
 </script>
 
@@ -112,7 +110,7 @@ const userData = ref([
   background-color: #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
-  background-image: url('assets/60111.jpg');
+  background-image: url('assets/moja_slika2.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -148,7 +146,7 @@ const userData = ref([
   background-color: #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
-  background-image: url('assets/60111.jpg');
+  background-image: url('assets/moja_slika2.jpg');
   background-size: cover;
   background-position: center;
 }

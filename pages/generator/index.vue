@@ -108,9 +108,9 @@ const toggleImage = () => {
         <!-- Generiraj QR Kod -->
         <div class="rectangle-label-pair mt-4">
 
-          <v-btn @click="toggleImage" color="primary" 
+          <v-btn @click="toggleImage"  style="background-color: rgb(0, 67, 122);"
             class="rectangleQR mb-2" rounded block>
-            <img src="@/assets/Logo2.png" alt="QR Code" class="qr-code-image" />
+            <img src="@/assets/dugme_prijava_bijelo.svg" alt="QR Code" class="qr-code-image" />
           </v-btn>
 
           <p class="label">Generiraj QR Kod</p>
@@ -202,8 +202,8 @@ const toggleImage = () => {
 }
 
 .qr-code-image {
-  max-width: 15%;
-  max-height: 15%;
+  max-width: 22%;
+  max-height: 22%;
   object-fit: contain; /* Ensures the logo fits within the button */
 }
 
